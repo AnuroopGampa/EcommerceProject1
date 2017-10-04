@@ -30,7 +30,7 @@ public class Dbconfig
 		public DataSource getDataSource() {
 			DriverManagerDataSource dataSource = new DriverManagerDataSource();
 			dataSource.setDriverClassName("org.h2.Driver");
-			dataSource.setUrl("jdbc:h2:tcp://localhost/~/test1");
+			dataSource.setUrl("jdbc:h2:tcp://localhost/~/test");
 			dataSource.setUsername("sa");
 			dataSource.setPassword("sa");
 			System.out.println("Datasource");
