@@ -41,7 +41,7 @@ public class Product1Test
 		productDAO=(Product1DAO) context.getBean("productDAO");
 	
 	}
-	@Test
+	/*@Test
 	public void createProduct1()
 	{
 		Product1 product=new Product1();
@@ -50,7 +50,29 @@ public class Product1Test
 		product.setQuantity(9);
 		product.setP_category("Orange Flavour");
 		
+		product.setName("choclate");
+		product.setPrice(1200.90);
+		product.setQuantity(9);
+		product.setP_category("Orange Flavour");	
+		boolean flag=productDAO.saveProduct1(product);
+		assertEquals("createProductTestCase", true, flag);
+	} */
+@Test
+	public void addProduct()
+	{
+		Product1 product = new Product1();
+		productDAO.addProduct(product);
+		product.setName("chocobar");
+		product.setP_category("Arun");
+		product.setPrice(100);
+		product.setQuantity(10);
 		boolean flag=productDAO.saveProduct1(product);
 		assertEquals("createProductTestCase", true, flag);
 	}
+	/*@Test
+	public void deleteProduct1()
+	{
+		productDAO.deleteProduct1(111);
+	}*/
+	
 }
