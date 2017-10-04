@@ -1,47 +1,62 @@
 package com.spring.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
-
-import org.springframework.stereotype.Component;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 @Entity
-@Component
-public class Product{
+@Table(name="Products")
+public class Product {
+
+	@SuppressWarnings("unused")
+	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(name = "pubId")
+	private Integer pubId;
 	
-	private int id;
-	private String name;
-	private int quantity;
-	private double price;
-	public int getId() {
-		return id;
+	@Column(name="Title")
+	private String pubTitle;
+	
+	@OneToOne
+    @JoinColumn(name="categoryId")
+	private Category category;
+	
+	@Column(name="content")
+	private String pubContent;
+	
+	public Integer getPubId() {
+		return pubId;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setPubId(Integer pubId) {
+		this.pubId = pubId;
 	}
-	public String getName() {
-		return name;
+	public String getPubTitle() {
+		return pubTitle;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setPubTitle(String pubTitle) {
+		this.pubTitle = pubTitle;
 	}
-	public int getQuantity() {
-		return quantity;
+	public String getPubContent() {
+		return pubContent;
 	}
-	public void setQuantity(int quantity) {
-		this.quantity = quantity;
+	public Category getCategory() {
+		return category;
 	}
-	public double getPrice() {
-		return price;
+	public void setCategory(Category category) {
+		this.category = category;
 	}
-	public void setPrice(double price) {
-		this.price = price;
+	public void setPubContent(String pubContent) {
+		this.pubContent = pubContent;
 	}
+	
+	
 	
 	
 

@@ -1,3 +1,4 @@
+
 package com.spring.config;
 
 import java.util.Properties;
@@ -14,23 +15,23 @@ import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+
 import com.spring.dao.ProductDAO;
 import com.spring.dao.ProductDAOImpl;
+import com.spring.model.Product;
 
 @Configuration
 @ComponentScan("com.spring")
 @EnableTransactionManagement
 @Component
 
-public class DBConfig  {
-	
-	
-     
+public class DBConfig  
+{	     
 	 @Bean(name = "dataSource")
 		public DataSource getDataSource() {
 			DriverManagerDataSource dataSource = new DriverManagerDataSource();
 			dataSource.setDriverClassName("org.h2.Driver");
-			dataSource.setUrl("jdbc:h2:tcp://localhost/~/test");
+			dataSource.setUrl("jdbc:h2:tcp://localhost/~/test1");
 			dataSource.setUsername("sa");
 			dataSource.setPassword("sa");
 			System.out.println("Datasource");
@@ -53,6 +54,7 @@ public class DBConfig  {
 		public SessionFactory getSessionFactory(DataSource dataSource) {
 			LocalSessionFactoryBuilder sessionBuilder = new LocalSessionFactoryBuilder(dataSource);
 			sessionBuilder.addProperties(getHibernateProperties());
+			sessionBuilder.addAnnotatedClass(Product.class);
 			sessionBuilder.scanPackages("com.spring");
 			System.out.println("Session");
 			
