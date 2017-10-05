@@ -8,6 +8,6 @@ public interface Product1DAO {
 	public boolean saveProduct1(Product1 product);
 	//void deleteProduct1(int id);
 	//List<Product1> getAllProducts();
-	void addProduct(Product1 product);
-	
+	//void addProduct(Product1 product);
+
 }

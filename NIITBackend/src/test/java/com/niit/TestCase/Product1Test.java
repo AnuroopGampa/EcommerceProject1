@@ -56,8 +56,8 @@ public class Product1Test
 		product.setP_category("Orange Flavour");	
 		boolean flag=productDAO.saveProduct1(product);
 		assertEquals("createProductTestCase", true, flag);
-	} */
-@Test
+	}*/ 
+/*@Test
 	public void addProduct()
 	{
 		Product1 product = new Product1();
@@ -68,7 +68,7 @@ public class Product1Test
 		product.setQuantity(10);
 		boolean flag=productDAO.saveProduct1(product);
 		assertEquals("createProductTestCase", true, flag);
-	}
+	}*/
 	/*@Test
 	public void deleteProduct1()
 	{

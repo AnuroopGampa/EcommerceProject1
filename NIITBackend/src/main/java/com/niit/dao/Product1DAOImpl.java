@@ -50,14 +50,18 @@ public class Product1DAOImpl implements Product1DAO
 		
 	}
 */
-	@Transactional
+	/*@Transactional
 	public void addProduct(Product1 product) 
 	{
 		sessionFactory.getCurrentSession().saveOrUpdate(product);
 		
-	}
-	
-	
+	}*/
 
-	
+	@Transactional
+	public void getProduct1(int id) 
+	{
+		sessionFactory.getCurrentSession().createQuery("GET FROM Product1 WHERE id = "+id).executeUpdate();
+		
+	}
 }
+	
