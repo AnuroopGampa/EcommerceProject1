@@ -1,5 +1,7 @@
 package com.niit.config;
 
+
+
 import java.util.Properties;
 
 import javax.sql.DataSource;
@@ -16,7 +18,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.niit.dao.Product1DAO;
-import com.niit.dao.Product1DAOImpl;
+
 import com.niit.model.Product1;
 
 @Configuration
@@ -69,12 +71,7 @@ public class Dbconfig
 			return transactionManager;
 		}
 		
-	//Factory Design pattern
-	@Autowired
-	@Bean(name = "productDAO")
-	public Product1DAO getProductDAO(SessionFactory sessionFactory) {
-	    return new Product1DAOImpl(sessionFactory);
-	}
 	
+
 	
 }

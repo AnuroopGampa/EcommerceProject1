@@ -2,6 +2,10 @@ package com.niit.TestCase;
 
 import static org.junit.Assert.*;
 
+import java.sql.PreparedStatement;
+import java.util.List;
+
+import org.hibernate.query.Query;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +24,7 @@ import com.niit.model.Product1;
 @ComponentScan("com.niit")
 public class Product1Test 
 {	
+	
 	//@Autowired
 	//private static Product product;
 	
@@ -37,7 +42,7 @@ public class Product1Test
 		
 		context.refresh();
 		
-		//product=(Product) context.getBean("product");
+		Product1 product=(Product1) context.getBean("product");
 		productDAO=(Product1DAO) context.getBean("productDAO");
 	
 	}
@@ -74,5 +79,8 @@ public class Product1Test
 	{
 		productDAO.deleteProduct1(111);
 	}*/
-	
+
+
 }
+
+
