@@ -1,7 +1,8 @@
 package com.niit.test;
 
-import static org.junit.Assert.assertEquals;
 
+import static org.junit.Assert.*;
+import javax.validation.constraints.AssertTrue;
 import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -33,6 +34,7 @@ public class TestProduct {
 		//product = (Product) context.getBean("product");
 		productDAO = (ProductDAO) context.getBean("productDAO");
 	}
+	@Ignore
 	@Test
 	public void createProduct(){
 		Product product= new Product();
@@ -41,29 +43,29 @@ public class TestProduct {
 		product.setDescription("small");
 		//product.setPrice(20);
 		product.setQuantity(10);
-	
-	
 boolean flag=productDAO.createProduct(product);
 		
 		assertEquals("createProductTestCase", true, flag);
 	
 	}
+	@Ignore
+	@Test
 	public void retrieveProduct()
 	{
 		Product product=new Product();
 		boolean listproduct=productDAO.getProduct(12);
-		assertEquals("problem in getting by id",product);
+		assertNotNull("problem in getting by id", product);
 	}
-	@Ignore
+	
 	@Test
-	public void deleteProduct1()
+	public void deleteProduct()
 	{
 		Product product = new Product();
-		product.setProduct_name("kitkat");
-		product.setQuantity(2);
+		product.setProduct_name("cream donut");
+		product.setQuantity(10);
 		product.setDescription("small");;
-		product.setPrice(567.78);
-		boolean flag=productDAO.deleteProduct(23);
+		product.setPrice(0.0);
+		boolean flag=productDAO.deleteProduct(25);
 		assertEquals("createProductTestCase", true, flag);
 	}
 	@Ignore

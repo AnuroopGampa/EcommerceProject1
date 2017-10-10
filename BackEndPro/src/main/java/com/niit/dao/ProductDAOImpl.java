@@ -3,6 +3,7 @@ package com.niit.dao;
 import java.util.Iterator;
 import java.util.List;
 
+import javax.transaction.Transactional;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -44,7 +45,7 @@ public class ProductDAOImpl implements ProductDAO {
 	public boolean getProduct(int id) {
 		// TODO Auto-generated method stub
 		Session session=sessionFactory.openSession();
-		Query q=session.createQuery("from product p");
+		Query q=session.createQuery("from Product p");
 		List l=q.getResultList();
 		System.out.println("Totaal number of records:"+l.size());;
 		Iterator it=l.iterator();
@@ -74,10 +75,10 @@ public class ProductDAOImpl implements ProductDAO {
 		 System.out.println("Object Updated successfully.....!!");
 		return true;
 	}
-
+@Transactional
 	public boolean deleteProduct(int id) {
 		// TODO Auto-generated method stub
-		sessionFactory.getCurrentSession().createQuery("DELETE FROM Product1 WHERE id = "+id).executeUpdate();
+		sessionFactory.getCurrentSession().createQuery("DELETE FROM Product WHERE id = "+id).executeUpdate();
 		return true;
 	}
 }

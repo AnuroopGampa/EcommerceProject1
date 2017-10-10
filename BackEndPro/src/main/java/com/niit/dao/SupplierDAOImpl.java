@@ -69,7 +69,7 @@ public class SupplierDAOImpl implements SupplierDAO {
 		 return true;
 	
 	}
-
+@Transactional
 	public boolean deleteSupplier(int id) {
 		// TODO Auto-generated method stub
 		sessionFactory.getCurrentSession().createQuery("DELETE FROM Supplier WHERE id = "+id).executeUpdate();
