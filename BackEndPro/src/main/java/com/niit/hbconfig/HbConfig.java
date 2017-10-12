@@ -20,9 +20,12 @@ import com.niit.dao.ProductDAO;
 import com.niit.dao.ProductDAOImpl;
 import com.niit.dao.SupplierDAO;
 import com.niit.dao.SupplierDAOImpl;
+import com.niit.dao.UserDAO;
+import com.niit.dao.UserDAOImpl;
 import com.niit.model.Category;
 import com.niit.model.Product;
 import com.niit.model.Supplier;
+import com.niit.model.User;
 
 @Configuration
 @ComponentScan("com.niit")
@@ -61,6 +64,7 @@ public class HbConfig {
 		sessionBuilder.addAnnotatedClasses(Product.class);
 		sessionBuilder.addAnnotatedClasses(Category.class);
 		sessionBuilder.addAnnotatedClasses(Supplier.class);
+		sessionBuilder.addAnnotatedClasses(User.class);
 		sessionBuilder.scanPackages("com.niit");
 
 		System.out.println("Session");
@@ -96,5 +100,12 @@ public class HbConfig {
 	public CategoryDAO getCategoryDetailsDAO(SessionFactory sessionFactory)
 	{
 		return new CategortDAOImpl(sessionFactory);
+	}
+	
+	@Autowired
+	@Bean(name="userDAO")
+	public UserDAO getUserDetailsDAO(SessionFactory sessionFactory)
+	{
+		return new UserDAOImpl(sessionFactory);
 	}
 }
