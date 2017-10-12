@@ -39,7 +39,7 @@ public class ProductDAOImpl implements ProductDAO {
 		Transaction tx=session.beginTransaction();
 		tx.commit();
 		return true;
-	}
+	} 
 
 	@SuppressWarnings("rawtypes")
 	public boolean getProduct(int id) {

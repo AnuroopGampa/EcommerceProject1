@@ -43,7 +43,7 @@ public class TestSupplier {
 			
 			assertEquals("createsupplierTestCase",true,flag);
 
-		}
+		} 
 	@Test
 	public void deleteSupplierTestCase()
 	
@@ -58,7 +58,7 @@ public class TestSupplier {
 	}
 	
 /*	@Test
-	public void editSupplierTestCase()
+	publ ic void editSupplierTestCase()
 	{
 		supplier.setId(911);;
 		supplier.setSupplier_name("naveen");

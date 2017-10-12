@@ -14,12 +14,13 @@ import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-
+import com.niit.dao.CategortDAOImpl;
+import com.niit.dao.CategoryDAO;
 import com.niit.dao.ProductDAO;
 import com.niit.dao.ProductDAOImpl;
 import com.niit.dao.SupplierDAO;
 import com.niit.dao.SupplierDAOImpl;
-
+import com.niit.model.Category;
 import com.niit.model.Product;
 import com.niit.model.Supplier;
 
@@ -58,7 +59,7 @@ public class HbConfig {
 		sessionBuilder.addProperties(getHibernateProperties());
 	
 		sessionBuilder.addAnnotatedClasses(Product.class);
-
+		sessionBuilder.addAnnotatedClasses(Category.class);
 		sessionBuilder.addAnnotatedClasses(Supplier.class);
 		sessionBuilder.scanPackages("com.niit");
 
@@ -90,5 +91,10 @@ public class HbConfig {
 	public SupplierDAO getSupplierDetailsDAO(SessionFactory sessionFactory) {
 			return new SupplierDAOImpl(sessionFactory);
 	}
-
+	@Autowired
+	@Bean(name="categoryDAO")
+	public CategoryDAO getCategoryDetailsDAO(SessionFactory sessionFactory)
+	{
+		return new CategortDAOImpl(sessionFactory);
+	}
 }

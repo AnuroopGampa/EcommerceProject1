@@ -34,14 +34,14 @@ public class TestProduct {
 		//product = (Product) context.getBean("product");
 		productDAO = (ProductDAO) context.getBean("productDAO");
 	}
-	@Ignore
+	
 	@Test
 	public void createProduct(){
 		Product product= new Product();
 		
-		product.setProduct_name("cream donut");
+		product.setProduct_name("cake");
 		product.setDescription("small");
-		//product.setPrice(20);
+		product.setPrice(20);
 		product.setQuantity(10);
 boolean flag=productDAO.createProduct(product);
 		
@@ -56,7 +56,7 @@ boolean flag=productDAO.createProduct(product);
 		boolean listproduct=productDAO.getProduct(12);
 		assertNotNull("problem in getting by id", product);
 	}
-	
+	@Ignore
 	@Test
 	public void deleteProduct()
 	{
@@ -70,7 +70,7 @@ boolean flag=productDAO.createProduct(product);
 	}
 	@Ignore
 	@Test
-	public void updateProduct1()
+	public void updateProduct()
 	{
 		Product product = new Product();
 		boolean flag=productDAO.updateProduct(product);
