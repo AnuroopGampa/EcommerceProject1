@@ -58,7 +58,7 @@ public class TestSupplier {
 	}
 	
 /*	@Test
-	publ ic void editSupplierTestCase()
+	public void editSupplierTestCase()
 	{
 		supplier.setId(911);;
 		supplier.setSupplier_name("naveen");

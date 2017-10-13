@@ -14,6 +14,8 @@ import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.niit.dao.CartDAO;
+import com.niit.dao.CartDAOimpl;
 import com.niit.dao.CategortDAOImpl;
 import com.niit.dao.CategoryDAO;
 import com.niit.dao.ProductDAO;
@@ -22,6 +24,7 @@ import com.niit.dao.SupplierDAO;
 import com.niit.dao.SupplierDAOImpl;
 import com.niit.dao.UserDAO;
 import com.niit.dao.UserDAOImpl;
+import com.niit.model.Cart;
 import com.niit.model.Category;
 import com.niit.model.Product;
 import com.niit.model.Supplier;
@@ -65,6 +68,7 @@ public class HbConfig {
 		sessionBuilder.addAnnotatedClasses(Category.class);
 		sessionBuilder.addAnnotatedClasses(Supplier.class);
 		sessionBuilder.addAnnotatedClasses(User.class);
+		sessionBuilder.addAnnotatedClasses(Cart.class);
 		sessionBuilder.scanPackages("com.niit");
 
 		System.out.println("Session");
@@ -85,7 +89,7 @@ public class HbConfig {
 	
 	@Autowired
 	@Bean(name = "productDAO")
-	public ProductDAO getproductDetailsDAO(SessionFactory sessionFactory) {
+	public ProductDAO getproductDAO(SessionFactory sessionFactory) {
 			return new ProductDAOImpl(sessionFactory);
 	}
 
@@ -107,5 +111,11 @@ public class HbConfig {
 	public UserDAO getUserDetailsDAO(SessionFactory sessionFactory)
 	{
 		return new UserDAOImpl(sessionFactory);
+	}
+	@Autowired
+	@Bean(name="cartDAO")
+	public CartDAO getCartDetailsDAO(SessionFactory sessionFactory)
+	{
+		return new CartDAOimpl(sessionFactory);
 	}
 }
