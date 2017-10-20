@@ -17,7 +17,10 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.niit.dao.CategoryDAO;
 import com.niit.dao.CategoryDAOImpl;
+import com.niit.dao.SupplierDAO;
+import com.niit.dao.SupplierDAOImpl;
 import com.niit.model.Category;
+import com.niit.model.Supplier;
 
 @Configuration
 @ComponentScan("com.niit")
@@ -54,7 +57,7 @@ public class Dbconfig {
 		//sessionBuilder.addAnnotatedClass(Product.class);
 		sessionBuilder.addAnnotatedClass(Category.class);
 		//sessionBuilder.addAnnotatedClasses(UserDetails.class);
-		//sessionBuilder.addAnnotatedClass(Supplier.class);
+		sessionBuilder.addAnnotatedClass(Supplier.class);
 		//sessionBuilder.addAnnotatedClass(Cart.class);
 		sessionBuilder.scanPackages("com.niit");
 		System.out.println("Session");
@@ -83,12 +86,12 @@ public ProductDAO getProductDAO(SessionFactory sessionFactory) {
 public CategoryDAO getCategoryDAO(SessionFactory sessionFactory){
 	return new CategoryDAOImpl(sessionFactory);
 }
-
-/*@Autowired
-@Bean(name = "supplierDAO")
-public SupplierDAO getSupplierDAO(SessionFactory sessionFactory) {
-   return new SupplierDAOImpl(sessionFactory);
-}*/
+@Autowired
+@Bean(name="supplierDAO")
+public SupplierDAO getSupplierDAO(SessionFactory sessionFactory)
+{
+	return new SupplierDAOImpl(sessionFactory);
+}
 
 /*	
 @Autowired

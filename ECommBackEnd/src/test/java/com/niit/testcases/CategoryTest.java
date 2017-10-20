@@ -1,4 +1,4 @@
-package com.niit.testcases;
+/*package com.niit.testcases;
 
 import static org.junit.Assert.*;
 
@@ -60,3 +60,4 @@ public class CategoryTest {
 		assertNotNull("problrm in getting category by Cid", category);
 	}
 }
+*/
