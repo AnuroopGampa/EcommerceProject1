@@ -7,7 +7,6 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
-
 @Entity
 @Component
 @Table(name="User_details")
@@ -49,5 +48,4 @@ public class User {
 	public void setUseraddress(String useraddress) {
 		this.useraddress = useraddress;
 	}
-
 }

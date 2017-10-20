@@ -1,10 +1,11 @@
 package com.niit.dao;
 
+
 import java.util.Iterator;
 import java.util.List;
 
-import javax.persistence.Query;
 
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -13,8 +14,9 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.niit.model.Supplier;
-@Repository
-public class SupplierDAOImpl implements SupplierDAO {
+@SuppressWarnings("deprecation")
+@Repository("supplierDAO")
+public class SupplierDAOImpl implements SupplierDAO{
 	@Autowired
 	private SessionFactory sessionFactory;
 
@@ -75,6 +77,7 @@ public class SupplierDAOImpl implements SupplierDAO {
 		sessionFactory.getCurrentSession().createQuery("DELETE FROM Supplier WHERE id = "+id).executeUpdate();
 		return true;
 	}
+	
 
-	}
 
+}

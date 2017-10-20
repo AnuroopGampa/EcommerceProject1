@@ -1,7 +1,6 @@
 package com.niit.model;
 
-import java.util.HashSet;
-import java.util.Set;
+
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,8 +9,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import org.springframework.stereotype.Component;
+import org.springframework.web.multipart.MultipartFile;
 
 @Component
 @Entity
@@ -22,7 +23,7 @@ public class Supplier {
     @GeneratedValue
  private int id;
  private String supplier_name;
- @OneToMany(fetch=FetchType.EAGER,mappedBy="supplier")
+ //@OneToMany(fetch=FetchType.EAGER,mappedBy="supplier")
 //private Set<Product>products=new HashSet<Product>(0);
  public int getId() {
 	return id;
@@ -36,5 +37,4 @@ public String getSupplier_name() {
 public void setSupplier_name(String supplier_name) {
 	this.supplier_name = supplier_name;
 }
-
 }

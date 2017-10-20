@@ -1,18 +1,18 @@
-package com.niit.test;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.annotation.ComponentScan;
+/*package com.niit.test;
 
 import static org.junit.Assert.*;
 
 import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 
+import com.niit.config.ApplicationContextConfig;
 import com.niit.dao.CartDAO;
-import com.niit.hbconfig.HbConfig;
 import com.niit.model.Cart;
+
 @ComponentScan("com.niit")
 public class TestCart {
 	@Autowired
@@ -23,7 +23,7 @@ public class TestCart {
 	public static void initialize()
 	{
 		AnnotationConfigApplicationContext context=new AnnotationConfigApplicationContext();
-		context.register(HbConfig.class);
+		context.register(ApplicationContextConfig.class);
 		context.scan("com.niit.*");
 		context.refresh();
 		cartDAO=(CartDAO)context.getBean("cartDAO");
@@ -68,7 +68,10 @@ public class TestCart {
 		assertEquals("createCartTestCase", true, flag);
 	}
 	
-
 	
 
 }
+
+
+
+*/

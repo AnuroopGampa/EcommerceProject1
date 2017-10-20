@@ -1,5 +1,6 @@
-package com.niit.dao;
+ package com.niit.dao;
 
+import java.util.List;
 
 import com.niit.model.Supplier;
 
@@ -10,5 +11,4 @@ public interface SupplierDAO {
   public boolean getSupplier(int id);
   public boolean updateSupplier(Supplier supplier);
   public boolean deleteSupplier(int id);
-
 }

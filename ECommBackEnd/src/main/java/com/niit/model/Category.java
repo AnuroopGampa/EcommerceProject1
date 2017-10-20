@@ -12,15 +12,15 @@ import org.springframework.stereotype.Component;
 @Component
 public class Category implements Serializable{
 
-	/**a
+
+	/**
 	 * 
 	 */
-	@SuppressWarnings("unused")
-	private static final long serialVersionUID = 4218574769663755268L;
-@Id
-@GeneratedValue(strategy=GenerationType.AUTO)
+	private static final long serialVersionUID = 8171803164478503065L;
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int category_id;
-private String category_Name,category_Description;
+	private String category_Name,category_Description;
 
 
 public int getCategory_id() {

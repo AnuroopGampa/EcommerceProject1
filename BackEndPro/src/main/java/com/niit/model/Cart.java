@@ -1,38 +1,38 @@
 package com.niit.model;
 
+
 import java.io.Serializable;
 
-import javax.persistence.Column;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
 @Component
 @Entity
-@Table(name="Cart_details")
-public class Cart implements Serializable {
+@Table
+public class Cart implements Serializable{
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 2687643841200590118L;
+	private static final long serialVersionUID = 9017492617429594727L;
 	@Id
-	@Column(name="cid")
-	@GeneratedValue
-	private int cartid;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int Cid;
 	private int productid;
 	private String productname;
 	private double price;
 	private int quantity;
 	private String username;
 	private String status;
-	private int catid;
-	public int getCartid() {
-		return cartid;
+	public int getCid() {
+		return Cid;
 	}
-	public void setCartid(int cartid) {
-		this.cartid = cartid;
+	public void setCid(int cid) {
+		Cid = cid;
 	}
 	public int getProductid() {
 		return productid;
@@ -70,11 +70,11 @@ public class Cart implements Serializable {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	public int getCatid() {
-		return catid;
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
-	public void setCatid(int catid) {
-		this.catid = catid;
-	}
+	
+
+	
 
 }

@@ -1,20 +1,17 @@
-package com.niit.test;
-
+/*package com.niit.test;
 
 import static org.junit.Assert.*;
-import javax.validation.constraints.AssertTrue;
+
 import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.annotation.ComponentScan;
 
+import com.niit.config.ApplicationContextConfig;
 import com.niit.dao.ProductDAO;
-import com.niit.hbconfig.HbConfig;
 import com.niit.model.Product;
-@SuppressWarnings("unused")
-@ComponentScan("com.niit")
+
 public class TestProduct {
 	//@Autowired
 	//private static Product product;
@@ -27,7 +24,7 @@ public class TestProduct {
 	public static void initialize()
 	{
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
-		context.register(HbConfig.class);
+		context.register(ApplicationContextConfig.class);
 		context.scan("com.niit.*");
 		context.refresh();
 		
@@ -77,4 +74,4 @@ boolean flag=productDAO.createProduct(product);
 		assertEquals("createProductTestCase", true, flag);
 	}
 }
-
+*/
