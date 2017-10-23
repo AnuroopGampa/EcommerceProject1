@@ -7,30 +7,48 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>ECommFrontEnd Maven Webapp</name>
   <url>http://maven.apache.org</url>
-   <properties>
+  
+  <properties>
 		<jdk.version>1.8</jdk.version>
-		
-		<spring.security.version>4.0.1.RELEASE</spring.security.version>
+		<spring.security.version>4.1.2.RELEASE</spring.security.version>
 		<jstl.version>1.2</jstl.version>
-		
+		<org.slf4j-version>1.7.5</org.slf4j-version>
 		<h2.version>1.4.195</h2.version>
+		<log4j.version>1.2.17</log4j.version>
 	</properties>
   
-  <dependencies>
-    <dependency>
+<dependencies>
+
+<dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.12</version>
       <scope>test</scope>
-    </dependency>
-   
-    <dependency> 
-  <groupId>com.niit</groupId>
+</dependency>
+  	<dependency>
+  	 <groupId>com.niit</groupId>
   <artifactId>ECommBackEnd</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <scope>compile</scope>
-  </dependency>
-   <dependency>
+  		<scope>compile</scope>
+  	</dependency>
+  		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${org.slf4j-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+			<version>${org.slf4j-version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>${org.slf4j-version}</version>
+			<scope>runtime</scope>
+		</dependency>
+     <dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
 			<version>${h2.version}</version>
@@ -59,13 +77,13 @@
     <artifactId>spring-context</artifactId>
     <version>4.3.10.RELEASE</version>
 </dependency>
-		<!-- https://mvnrepository.com/artifact/org.springframework/spring-aop -->
-<dependency>
-    <groupId>org.springframework</groupId>
-    <artifactId>spring-aop</artifactId>
-    <version>4.3.10.RELEASE</version>
-</dependency>
-		
+
+<!-- https://mvnrepository.com/artifact/org.springframework/spring-aop -->
+	<dependency>
+    	<groupId>org.springframework</groupId>
+    	<artifactId>spring-aop</artifactId>
+    	<version>4.3.10.RELEASE</version>
+	</dependency>
 		
 		<dependency>
     		<groupId>org.springframework</groupId>
@@ -133,10 +151,20 @@
 			<version>3.1.0</version>
 			<scope>provided</scope>
 		</dependency>
-		
-  </dependencies>
+		<dependency>
+    		<groupId>org.hibernate</groupId>
+    		<artifactId>hibernate-core</artifactId>
+    		<version>5.2.10.Final</version>
+		</dependency>	
+		<!-- Logging dependencies -->
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>${log4j.version}</version>
+		</dependency>
+ </dependencies>
   <build>
-    <finalName>ECommFrontEnd</finalName>
+    <finalName>NIITFrontend</finalName>
     <plugins>
        <plugin>
             <groupId>org.apache.maven.plugins</groupId>
