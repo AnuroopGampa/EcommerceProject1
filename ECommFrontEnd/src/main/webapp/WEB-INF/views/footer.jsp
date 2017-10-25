@@ -43,7 +43,16 @@
 			    <h4>About the company</h4>
 			    <p> 
 			    </p>
-			    <div class="social-links social-icons"><a href="https://www.facebook.com/YourStyle-565160520541773/"><i class="fa fa-facebook"></i></a><a href="https://twitter.com/"><i class="fa fa-twitter"></i></a><a href="https://www.linkedin.com/"><i class="fa fa-linkedin"></i></a><a href="https://github.com/"><i class="fa fa-github"></i></a></div>
+			    <div class="social-links social-icons">
+			    <a href="https://www.facebook.com/YourStyle-565160520541773/">
+			    <i class="fa fa-facebook"></i></a>
+			    <a href="https://twitter.com/">
+			    <i class="fa fa-twitter"></i></a>
+			    <a href="https://www.linkedin.com/">
+			    <i class="fa fa-linkedin"></i></a>
+			    <a href="https://github.com/">
+			    <i class="fa fa-github"></i></a>
+			    </div>
 			</div>			
 		</div>
 		</div>

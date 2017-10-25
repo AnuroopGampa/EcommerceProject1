@@ -2,8 +2,7 @@ package com.niit.dao;
 
 import java.util.List;
 
-import javax.persistence.Query;
-
+import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
@@ -38,18 +37,18 @@ public class ProductDAOImpl implements ProductDAO{
 @Transactional
 	public Product getProductById(int product_id) {
 		// TODO Auto-generated method stub
-		String hql = "from" + " Product" + " where id=" + product_id;
-		@SuppressWarnings("rawtypes")
-		Query query = sessionFactory.getCurrentSession().createQuery(hql);
+	String hql = "from" + " Product" + " where id=" + product_id;
+	@SuppressWarnings("rawtypes")
+	Query query = sessionFactory.getCurrentSession().createQuery(hql);
 
-		@SuppressWarnings("unchecked")
-		List<Product> listProduct = (List<Product>) ((ProductDAOImpl) query).list();
+	@SuppressWarnings("unchecked")
+	List<Product> listProduct = (List<Product>) query.list();
 
-		if (listProduct != null && !listProduct.isEmpty()) {
-			return listProduct.get(0);
-		}
+	if (listProduct != null && !listProduct.isEmpty()) {
+		return listProduct.get(0);
+	}
 
-		return null;
+	return null;
 	}
 @Transactional
 	public Product removeProductById(int product_id) {
