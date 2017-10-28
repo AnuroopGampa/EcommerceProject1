@@ -111,4 +111,10 @@ public void pay(int userId) {
 	query.executeUpdate();
 }
 
+public List<Cart> getCart(int userId) {
+	// TODO Auto-generated method stub
+ List<Cart> clist=sessionFactory.getCurrentSession().createQuery("from Cart where userId= "+userId).list();
+ return clist;
+}
+
 }

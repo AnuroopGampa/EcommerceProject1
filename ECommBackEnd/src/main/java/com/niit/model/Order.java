@@ -8,35 +8,33 @@ import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
 
-
 @Component
 @Entity
-@Table(name="CART_DETAILS") 
-public class Cart {
+@Table(name="Pay_DETAILS") 
+public class Order {
 	@Id
-	@Column(name="Cartid")
+	@Column(name="Orderid")
 	@GeneratedValue
-	private int id;
+	private int orderId;
 	
-	private int Userid;
+	private int userid;
 	private String productname;
 	private double productprice;
 	private int quantity;
 	private String status;
 	private double subTotal;
 	private int productid;
-	private String orderId;
-	public int getId() {
-		return id;
+	/*public String getOrderId() {
+		return orderId;
 	}
-	public void setId(int id) {
-		this.id = id;
-	}
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
+	}*/
 	public int getUserid() {
-		return Userid;
+		return userid;
 	}
 	public void setUserid(int userid) {
-		this.Userid = userid;
+		this.userid = userid;
 	}
 	public String getProductname() {
 		return productname;
@@ -74,10 +72,6 @@ public class Cart {
 	public void setProductid(int productid) {
 		this.productid = productid;
 	}
-	public String getOrderId() {
-		return orderId;
-	}
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
-	}
+	
+	
 }
