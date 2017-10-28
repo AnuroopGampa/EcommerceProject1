@@ -87,7 +87,7 @@ public class HomeController {
 			     {
 			    	 session.setAttribute("UserLoggedIn", "true");
 			    	session.setAttribute("cartsize",cartDAO.cartsize((Integer)session.getAttribute("userid")));
-			    	 return "redirect:/loggedin";
+			    	 return "loggedin";
 			     }
 			     else 
 			     {

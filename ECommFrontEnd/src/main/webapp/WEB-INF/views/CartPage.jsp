@@ -9,7 +9,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Example of Bootstrap 3 Dropdowns within a Navbar</title>
+<title>FashionHub</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -52,13 +52,7 @@
                         </ul>
                     </li>
                 </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    
-                              <li> <a href="<c:url value="j_spring_security_logout" />">Logout</a></li>
-                            
-                           
-                            
-                        </ul>
+               
                     </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
@@ -120,7 +114,7 @@
                         <td class="text-right"><h5><strong>${cart.subTotal}</strong></h5></td>
                     </tr>
                     <tr>
-                        <td>   </td>
+                        <td>   </td> 
                         <td>   </td>
                         <td>   </td>
                         <td><h5>Estimated shipping</h5></td>
@@ -144,9 +138,9 @@
                         
                         </td>
                         <td>
-                        <button type="button" class="btn btn-success">
-                            Checkout <span class="glyphicon glyphicon-play"></span>
-                        </button></td>
+                        <a href="checkout" class="btn btn-success">
+                             <span class="glyphicon glyphicon-play"></span> Checkout
+                       </a></td>
                     </tr>
                 </tbody>
             </table>

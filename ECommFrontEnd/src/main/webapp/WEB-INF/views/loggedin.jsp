@@ -9,7 +9,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Example of Bootstrap 3 Dropdowns within a Navbar</title>
+<title>FashionHub</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -32,7 +32,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Brand</a>
+                <a class="navbar-brand" href="#">FashionHub</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -79,27 +79,27 @@
 			</h2>
 
 
-			<div class="pi-img-wrapper">
+			<div class="row">
 										<img src="/ECommFrontEnd/myImage/imageDisplay?id=${product.id}"
 											class="img-responsive" style="width: 180px; height: 120px">
 										<div>				</div>
 			</div>
 
-			<div class="col-xs-4 ">
+			<div class="row ">
 				<div class="img">
 					<div class="desc">
 						<p>
 						<div class="form-group">
-							<input type="text" class="form-control" value="${product.name}"
+							<input type="text" style="width: 300px;"class="form-control" value="${product.name}"
 								readonly="readonly">
 						</div>
 
 						<div class="form-group">
-							<input type="text" class="form-control"
+							<input type="text" style="width: 300px;"class="form-control"
 								value="Rs. ${product.price}" readonly="readonly">
 						</div>
 						<div class="form-group">
-							<input type="text" class="form-control"
+							<input type="text"style="width: 300px;" class="form-control"
 								value="${product.description}" readonly="readonly">
 						</div>
 						<div>
